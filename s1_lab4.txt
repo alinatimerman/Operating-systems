@@ -1,0 +1,6 @@
+#!/bin/bash
+
+f1=$1;
+word=$2;
+sed -i -e 's/\<'$2'\>//g' $f1;
+cat $f1

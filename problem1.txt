@@ -1,0 +1,26 @@
+#!/bin/bash
+
+i=1
+while [ $i -ne -0 ]
+do
+echo "1. DISPLAY ALL USERS NAMES."
+echo "2. DISPLAY STATION FOR ALL USERS."
+echo "3. EXIT."
+echo "ENTER A CHOICE.."
+read choice
+case $choice in
+        1)echo "ALL USERS NAMES ARE:"
+        awk -F: '{ print $5}' /etc/passwd;;
+
+        2)echo "ALL STATIONS ARE:"
+        last| awk '{print $3}';;
+
+        3)exit;;
+esac
+echo "Press 0 if you want to exit, 1 if you want to try again: "
+read i
+if [ $i != 1 ]
+then
+exit
+fi
+done
